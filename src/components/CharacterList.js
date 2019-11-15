@@ -1,9 +1,30 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import styled from 'styled-components'
 
 const CharacterList = props => {
   const [characters, setCharacters] = useState ([])
   const [query, setQuery] = useState ("")
+
+  const Wrap = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  `
+  const Center = styled.form`
+    display: flex;
+    justify-content: center;
+  `
+
+  const Search = styled.input`
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 30px;
+    padding-right: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  `
 
   useEffect(() => {
     const getCharacters = () => {
@@ -28,8 +49,8 @@ const CharacterList = props => {
 
   return (
     <div>
-      <form className = "search">
-        <input
+      <Center>
+        <Search
           type="text"
           onChange={handleInputChange}
           value={query}
@@ -39,12 +60,13 @@ const CharacterList = props => {
           placeholder="Search by character name"
           autoComplete="off"
           />
-      </form>
-      <div>
+      </Center>
+      
+      <Wrap>
       {characters.map(char => (
         <CharacterCard key={char.id} char={char} />
       ))}
-      </div>
+      </Wrap>
     </div>
   )
 }
