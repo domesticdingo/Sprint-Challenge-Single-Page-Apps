@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: The whole page doesn't have to refresh on user actions, making the user experience smoother.
 
 ## Project Set Up
 
