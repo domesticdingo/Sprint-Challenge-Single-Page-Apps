@@ -24,7 +24,7 @@ export default function WelcomePage() {
           />
         </Welcome>
         <div className="nav-link">
-          <Link to = "/characters">Characters</Link>
+          <Link to = "/characters">See all characters</Link>
         </div>
       </Head>
     </section>
